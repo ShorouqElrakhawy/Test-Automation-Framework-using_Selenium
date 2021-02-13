@@ -2,5 +2,4 @@
 @ECHO ===========================================
 @TITLE Generate Allure Report
 @ECHO {Make sure to set Allure in your Environment variables}
-CD
 allure serve allure-results

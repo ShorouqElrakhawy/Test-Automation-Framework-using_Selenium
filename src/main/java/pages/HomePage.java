@@ -1,20 +1,23 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends PageBase {
 
-    @FindBy(className = "login")
-    WebElement loginBtn;
+	private By registerBtn = By.className("ico-register");
+	public By logoutBtn = By.className("ico-logout");
 
-    public HomePage(WebDriver driver) {
-	super(driver);
-    }
+	public HomePage(WebDriver driver) {
+		super(driver);
+	}
 
-    public void clickLoginButton(WebDriver driver) {
-	click(loginBtn);
-    }
+	public void clickRegisterButton() {
+		click(registerBtn);
+	}
+	
+	public void ClickLogoutButton() {
+		click(logoutBtn);
+	}
 
 }

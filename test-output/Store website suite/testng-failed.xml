@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="15" parallel="tests" name="Failed suite [Store website suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="15" parallel="tests" name="Chrome_Browser(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="test.CreateAccountTest">
+        <methods>
+          <include name="startDriver"/>
+          <include name="beforeClass"/>
+          <include name="verifyRegisteration_isSuccessful"/>
+          <include name="stopDriver"/>
+          <include name="verifyRegisteration_usingNonMatchingPasswordAndConfirmPassword"/>
+          <include name="screenshotOnFailure"/>
+          <include name="verifyRegisteration_usingInvalidEmailFormat_fails"/>
+        </methods>
+      </class> <!-- test.CreateAccountTest -->
+    </classes>
+  </test> <!-- Chrome_Browser(failed) -->
   <test thread-count="15" parallel="tests" name="Firefox_Browser(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
@@ -8,9 +24,11 @@
         <methods>
           <include name="startDriver"/>
           <include name="beforeClass"/>
+          <include name="verifyRegisteration_isSuccessful" invocation-numbers="0"/>
           <include name="stopDriver"/>
+          <include name="verifyRegisteration_usingNonMatchingPasswordAndConfirmPassword" invocation-numbers="0"/>
           <include name="screenshotOnFailure"/>
-          <include name="verifyRegisteration_usingInvalidEmailFormat_fails" invocation-numbers="2 3 4"/>
+          <include name="verifyRegisteration_usingInvalidEmailFormat_fails" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- test.CreateAccountTest -->
     </classes>
@@ -22,25 +40,13 @@
         <methods>
           <include name="startDriver"/>
           <include name="beforeClass"/>
+          <include name="verifyRegisteration_isSuccessful" invocation-numbers="0"/>
           <include name="stopDriver"/>
+          <include name="verifyRegisteration_usingNonMatchingPasswordAndConfirmPassword" invocation-numbers="0"/>
           <include name="screenshotOnFailure"/>
-          <include name="verifyRegisteration_usingInvalidEmailFormat_fails" invocation-numbers="0 3 4"/>
+          <include name="verifyRegisteration_usingInvalidEmailFormat_fails" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- test.CreateAccountTest -->
     </classes>
   </test> <!-- Edge_Browser(failed) -->
-  <test thread-count="15" parallel="tests" name="Chrome_Browser(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="test.CreateAccountTest">
-        <methods>
-          <include name="startDriver"/>
-          <include name="beforeClass"/>
-          <include name="stopDriver"/>
-          <include name="screenshotOnFailure"/>
-          <include name="verifyRegisteration_usingInvalidEmailFormat_fails" invocation-numbers="0 2 3 4"/>
-        </methods>
-      </class> <!-- test.CreateAccountTest -->
-    </classes>
-  </test> <!-- Chrome_Browser(failed) -->
 </suite> <!-- Failed suite [Store website suite] -->

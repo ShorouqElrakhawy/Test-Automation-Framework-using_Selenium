@@ -10,7 +10,6 @@
           <include name="verifyRegisteration_isSuccessful" invocation-numbers="0"/>
           <include name="stopDriver"/>
           <include name="screenshotOnFailure"/>
-          <include name="verifyRegisteration_usingValidEmail_naviagtesToRegisterationPage"/>
         </methods>
       </class> <!-- test.CreateAccountTest -->
     </classes>
